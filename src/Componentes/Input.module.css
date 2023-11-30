@@ -1,0 +1,16 @@
+.typeForm{
+    width: 100%;
+    padding: .9em;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    background-color: rgb(224, 221, 221);
+}
+
+.typeSearch{
+    padding: 0.5em;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+}

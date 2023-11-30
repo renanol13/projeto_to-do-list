@@ -1,0 +1,57 @@
+.boxPrincipal{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.173);
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 999999;
+}
+
+.boxForm{
+    padding: 1.5em 1em 6px 1em;
+    background-image: linear-gradient(45deg, var(--cor1), var(--cor5));
+    border-radius: 9px;
+    height: max-content;
+    width: 100%;
+    max-width: 400px;
+    margin: 0px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.241);
+    transform: translateY(80px);
+}
+
+.boxEntrada{
+    width: 85%;
+    margin-bottom: 1em;
+}
+
+.boxEntrada input{
+    width: 100%;
+    padding: .9em;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    font-size: 1em;
+    background-color: rgb(224, 221, 221);
+}
+
+.boxEntrada textarea{
+    height: 120px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 0.6em;
+    font-size: 1em;
+    outline: none;
+    background-color: rgb(224, 221, 221);
+}
+
+.boxEntrada select{
+    width: 100%;
+    padding: 0.3em;
+    border-radius: 10px;
+    outline: none;
+    background-color: rgb(224, 221, 221);
+}

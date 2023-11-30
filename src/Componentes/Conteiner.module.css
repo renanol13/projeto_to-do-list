@@ -1,0 +1,4 @@
+.boxConteiner{
+    height: calc(100vh - 80px);
+    transform: translateY(80px);
+}

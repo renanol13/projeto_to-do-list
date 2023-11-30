@@ -1,0 +1,22 @@
+.boxFunctions{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 800px;
+    height: max-content;
+    height: 50px;
+    
+    z-index: 9999;
+}
+
+.boxUl{
+    height: 20px;
+    width: 20px;
+    color: white;
+}
+
+.boxUl > li{
+    visibility: hidden;
+}

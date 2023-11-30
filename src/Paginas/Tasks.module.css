@@ -1,0 +1,16 @@
+.boxPrincipal{
+    height: 100%;
+}
+
+
+.boxContent{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.boxContent .msg{
+    color: white;
+    position: absolute;
+    transform: translate(50%,50%);
+    font-size: 1.1em;
+}

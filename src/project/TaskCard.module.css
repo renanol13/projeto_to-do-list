@@ -1,0 +1,40 @@
+.boxCard{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 0 auto;
+    padding: .5em;
+    border-radius: 10px;
+    background-image: linear-gradient(to left, var(--cor1), var(--cor2));
+    margin-block: 20px;
+}
+
+.incomplete{
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+strong{
+    color: var(--cor5);
+    padding-right: 3px;
+}
+
+.boxControl button{
+    padding: .5em;
+    background-color: transparent;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1em;
+    transition: .4s;
+}
+
+.boxControl button:hover{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.103);
+}
+
+.incompleteIcon{
+    color: rgb(255, 1, 1);
+    opacity: 1;
+}
