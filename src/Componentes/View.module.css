@@ -24,14 +24,14 @@
 
 .boxData p{
     padding: .5em ;
-    background-color: rgba(224, 221, 221, 0.596);;
+    background-color: rgba(224, 221, 221, 0.844);
     margin-bottom: .3em;
     border-radius: 10px;
 }
 
 .boxTask .title{
     padding: .5em ;
-    background-color: rgba(224, 221, 221, 0.596);;
+    background-color: rgba(224, 221, 221, 0.844);
     border-radius: 10px 10px 0px 0px;
 }
 
@@ -39,7 +39,7 @@
 
 .boxTask .msg{
     padding: .5em ;
-    background-color: rgba(224, 221, 221, 0.596);
+    background-color: rgba(224, 221, 221, 0.844);
     border-radius: 0px 0px 10px 10px;
     word-wrap:break-word;
     min-height: 80px;

@@ -17,6 +17,7 @@ export default function Input({
       onChange={handleChange}
       placeholder={placeholder}
       className={styles[customStyles]}
+      required
     />
     </>
   );

@@ -15,7 +15,7 @@
     height: max-content;
     width: 100%;
     max-width: 400px;
-    margin: 0px 6px;
+    margin: 0px 8px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,16 +26,6 @@
 .boxEntrada{
     width: 85%;
     margin-bottom: 1em;
-}
-
-.boxEntrada input{
-    width: 100%;
-    padding: .9em;
-    border-radius: 10px;
-    outline: none;
-    border: none;
-    font-size: 1em;
-    background-color: rgb(224, 221, 221);
 }
 
 .boxEntrada textarea{

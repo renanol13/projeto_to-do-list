@@ -5,13 +5,13 @@ let object = JSON.parse(localStorage.getItem("dataStorage")) || [];
 
 const initialState = {
   data: object,
-  dataView: []
+  dataView: [],
+  tempData: {}
 };
 
 const Reduce = (state, action) => {
   switch (action.type) {
     case "ADD-OBJECT":
-      console.log(state.data);
       return {
         ...state,
         data: [...state.data, action.payload],
@@ -42,7 +42,25 @@ const Reduce = (state, action) => {
         ...state,
         dataView: viewing 
       }
+    case "EDIT-DATA": {
+      const  editing = state.data.filter((elm) =>
+        elm.titulo === action.payload 
+      )
+      return {
+        ...state,
+        tempData: editing[0]
+      }
+    }
+    case 'UPDATE-DATA':
+      const index = state.data.findIndex((elm) => elm.id == action.payload.id)
+      const updatedData = [...state.data];
+      updatedData[index] = action.payload
 
+      return {
+        ...state,
+        tempData: null,
+        data: updatedData
+      }
     default:
       return state;
   }

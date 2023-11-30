@@ -2,16 +2,17 @@ import { FaEye, FaEdit } from "react-icons/fa";
 import { MdOutlineTaskAlt } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
+import FormNewTask from "../Componentes/FormNewTask";
+
 import { useContext } from "react";
-import { useEffect } from "react";
 import { ContextStorage } from "../Context/ContextParent";
 import { ContextActives } from "../Context/ContextActives";
+
 import styles from "./TaskCard.module.css";
 
 export default function TaskCard({ titulo, categoria, date, isCompleted}) {
-  const { dispatch } = useContext(ContextStorage);
+  const { state, dispatch } = useContext(ContextStorage);
   const { dispatch2 } = useContext(ContextActives)
-  
 
   return (
     <>
@@ -22,19 +23,28 @@ export default function TaskCard({ titulo, categoria, date, isCompleted}) {
         </div>
         {/* Controles de funções dos icons */}
         <div className={styles.boxControl}>
+          {/* visualizar */}
           <button onClick={() => {
             dispatch2({ type: "ACTIVE-VIEW" })
             dispatch({type:'VIEW-DATA', payload:titulo})}}>
             <FaEye/>
           </button>
+          {/* completar ou Vice-Versa */}
           <button
             onClick={() => dispatch({ type: 'COMPLETED-TASK', payload: titulo })}
             className={`${isCompleted ? styles['incompleteIcon']: ''}`}>
             <MdOutlineTaskAlt />
           </button>
-          <button>
+          {/* Editar */}
+          <button
+            onClick={() => {
+              dispatch2({ type: 'ACTIVE-ADD' })
+              dispatch({ type: 'EDIT-DATA', payload: titulo })
+            }}
+          >
             <FaEdit />
           </button>
+          {/* Excluir */}
           <button
             onClick={() => dispatch({ type: "DELETE-ELEMENT", payload: titulo })}>
             <MdDelete />

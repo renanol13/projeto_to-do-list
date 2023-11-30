@@ -10,22 +10,31 @@ import styles from "./FormNewTask.module.css";
 
 export default function FormNewTask() {
 
-  const [data, setData] = useState({})
-  const { dispatch } = useContext(ContextStorage)
+  const {state, dispatch } = useContext(ContextStorage)
   const {dispatch2} = useContext(ContextActives)
+  const [data, setData] = useState( state.tempData || {})
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    dispatch({type:"ADD-OBJECT", payload:data})
+    //Define se tem dados como parametro ou não
+    if (state.tempData) {
+      dispatch({type:'UPDATE-DATA', payload:data})
+    } else {
+      dispatch({ type: "ADD-OBJECT", payload: data })  
+    }
+    dispatch2({type:"ACTIVE-ADD"})
   }
 
+  // Pega os dados 
   const handleChange = (e) => {
     setData({
       ...data,
       [e.target.name]: e.target.value,
-      isCompleted: false
+      id: state.tempData ? data.id : Date.now(),
+      isCompleted: state.tempData ? data.isCompleted : false
     })
-    console.log(data.date);
   }
 
 
@@ -43,7 +52,7 @@ export default function FormNewTask() {
         </div>
 
         <div className={styles.boxEntrada}>
-          <p>Prazo</p>
+          <p>Prazo:</p>
           <Input type="date"
             name="date"
             value={data.date ? data.date : ''}
@@ -59,9 +68,10 @@ export default function FormNewTask() {
         <div className={styles.boxEntrada}>
           <select  name="categoria" value={data.categoria ? data.categoria : ''} onChange={handleChange}>
             <option value="">Selecione uma Opção</option>
-            <option value="pessoal">Pessoal</option>
-            <option value="trabalho">Trabalho</option>
-            <option value="desejos">Lista de desejos</option>
+            <option value="Pessoal">Pessoal</option>
+            <option value="Trabalho">Trabalho</option>
+            <option value="Desejos">Lista de desejos</option>
+            <option value="Outro">Outro</option>
           </select>
         </div>
 

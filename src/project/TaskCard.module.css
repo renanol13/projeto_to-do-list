@@ -12,6 +12,7 @@
 
 .incomplete{
     opacity: 0.5;
+    background-color: #283637 !important;
     text-decoration: line-through;
 }
 
@@ -26,15 +27,17 @@ strong{
     border: none;
     border-radius: 50px;
     font-size: 1.1em;
-    transition: .4s;
+    transition: .3s;
 }
 
-.boxControl button:hover{
-    color: white;
-    background-color: rgba(0, 0, 0, 0.103);
-}
 
 .incompleteIcon{
     color: rgb(255, 1, 1);
-    opacity: 1;
+}
+
+@media (min-width:600px) {
+    .boxControl button:hover{
+        color: white;
+        background-color: rgba(0, 0, 0, 0.103);
+    }
 }

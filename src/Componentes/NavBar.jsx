@@ -13,10 +13,10 @@ export default function NavBar() {
 
   return (
     <nav className={styles.boxNav}>
-      <h2>To-do-list</h2>
+      <h2>To-do-List</h2>
       <ul>
         <li>
-          <Link to='/tasks'><FaTasks /></Link>
+          <Link exact to='/'><FaTasks /></Link>
         </li>
         <li onClick={()=>dispatch2({type:"ACTIVE-ADD"})}>
           <MdFormatListBulletedAdd />   
