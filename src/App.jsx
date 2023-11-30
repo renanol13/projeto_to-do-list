@@ -12,9 +12,7 @@ function App() {
         <NavBar/>
         <Conteiner>
           <Routes>
-            <Route
-              path="/tasks"
-              element={<Tasks/>} />
+            <Route path="/tasks" element={<Tasks/>} />
             <Route path="/graphic" element={''} />
           </Routes>
         </Conteiner>
