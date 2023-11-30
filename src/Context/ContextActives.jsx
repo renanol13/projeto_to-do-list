@@ -15,6 +15,12 @@ const Reduce = (state, action) => {
                 activeAdd: !state.activeAdd,
                 activeView: false
             }
+        case "DISABLE-ICON": {
+            return {
+                ...state,
+                activeAdd: false
+            }
+        }
         case "ACTIVE-VIEW":
             return {
                 ...state,
@@ -24,6 +30,7 @@ const Reduce = (state, action) => {
             return {
                 initialState
             }
+        
         }
  }
 }

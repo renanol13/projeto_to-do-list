@@ -17,18 +17,17 @@ export default function NavBar() {
     <nav className={styles.boxNav}>
       <h2>To-do-List</h2>
       <ul>
-        <li>
+        <li onClick={()=>dispatch2({type:"DISABLE-ICON"})}>
           <Link exact to='/'><FaTasks /></Link>
         </li>
         <li onClick={()=>dispatch2({type:"ACTIVE-ADD"})}>
           <IoMdAdd />   
         </li>
-        {/* Função futura */}
-        {/* <li>
+        <li>
           <Link to='/graphic'>
             <TbChartInfographic />
           </Link>
-        </li> */}
+        </li>
       </ul>
     </nav>
   );
