@@ -1,10 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { useState } from "react"
 
 import NavBar from "./Componentes/NavBar"
 import Conteiner from "./Componentes/Conteiner"
 import Tasks from "./Paginas/Tasks"
-import Grafic from "./Paginas/Grafic"
+import Graphic from "./project/Graphic"
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
         <Conteiner>
           <Routes>
             <Route path="/" element={<Tasks/>} />
-            <Route path="/graphic" element={<Grafic/>} />
+            <Route path="/graphic" element={<Graphic/>} />
           </Routes>
         </Conteiner>
       </Router>
