@@ -12,8 +12,9 @@ function App() {
         <NavBar/>
         <Conteiner>
           <Routes>
-            <Route path="/" element={<Tasks/>} />
-            <Route path="/graphic" element={<Graphic/>} />
+            <Route path="/" element={<Tasks />} />
+            {/* Função futura */}
+            {/* <Route path="/graphic" element={<Graphic/>} /> */}
           </Routes>
         </Conteiner>
       </Router>
