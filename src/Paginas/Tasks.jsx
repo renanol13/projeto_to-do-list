@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext, useState } from "react";
 
 import FormNewtask from "../Componentes/FormNewTask";
 import TaskCard from "../project/TaskCard";
@@ -17,9 +17,9 @@ export default function Tasks() {
 
   return (
     <div className={styles.boxPrincipal}>
-      {/*Popups*/}
-      {state2.activeView && <View />}
       {state2.activeAdd && <FormNewtask />}
+      {/*Pop ps*/}
+      {state2.activeView && <View />}
       <FunctionsFilter
         search={search}
         setSearch={setSearch}
@@ -48,14 +48,15 @@ export default function Tasks() {
                 ? elm.isCompleted
                 : !elm.isCompleted
             )
-            .filter((elm) => elm.titulo.includes(search))
-            .map((elm, i) => (
+            .filter((elm) => elm.titulo.toUpperCase().includes(search.toUpperCase()))
+            .map((elm) => (
               <TaskCard
-                key={i}
+                key={elm.id}
                 titulo={elm.titulo}
                 categoria={elm.categoria}
                 date={elm.date}
                 isCompleted={elm.isCompleted}
+                id={elm.id}
               />
             ))
         )}

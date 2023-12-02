@@ -18,7 +18,7 @@ export default function NavBar() {
       <h2>To-do-List</h2>
       <ul>
         <li onClick={()=>dispatch2({type:"DISABLE-ICON"})}>
-          <Link exact to='/'><FaTasks /></Link>
+          <Link to='/'><FaTasks /></Link>
         </li>
         <li onClick={()=>dispatch2({type:"ACTIVE-ADD"})}>
           <IoMdAdd />   

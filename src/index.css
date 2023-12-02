@@ -7,14 +7,13 @@
 
 :root{
   --cor1: #42cafd;
-  --cor2: #66B3BA;;
-  --cor3: #8EB19D;
+  --cor2: #66B3BA;
   --cor5: #343434;
 }
 
 
 
-body, html, #root{
+ body,html, #root{
   height: 100%;
   background-color: var(--cor5);
 }

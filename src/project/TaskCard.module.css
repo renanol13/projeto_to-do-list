@@ -22,12 +22,17 @@ strong{
 }
 
 .boxControl button{
-    padding: .5em;
+    padding: .4em;
     background-color: transparent;
     border: none;
     border-radius: 50px;
     font-size: 1.1em;
     transition: .3s;
+}
+
+.boxControl button:active{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.103);
 }
 
 

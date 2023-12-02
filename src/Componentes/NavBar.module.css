@@ -25,24 +25,35 @@
 
 
 
-.boxNav li{
+.boxNav li, .boxNav a{
+    display: flex;
+    align-items: center;
     border-radius: 50px;
+    padding: 4px;
     color: black;
     cursor: pointer;
-    font-size: 1.7em;
-    padding: .3em;
+    font-size: 32px;
     transition: .3s;
+    text-decoration: none;
 }
 
 
-.boxNav a{
-    text-decoration: none;
-    color: inherit;
+.boxNav li:active{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.103);
+}
+
+.boxNav li:active a{
+    color: white;
 }
 
 @media (min-width:600px) {
     .boxNav li:hover{
         color: white;
         background-color: rgba(0, 0, 0, 0.103);
+    }
+
+    .boxNav li:hover a{
+        color: white;
     }
 }

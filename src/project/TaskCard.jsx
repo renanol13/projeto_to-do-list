@@ -10,43 +10,59 @@ import { ContextActives } from "../Context/ContextActives";
 
 import styles from "./TaskCard.module.css";
 
-export default function TaskCard({ titulo, categoria, date, isCompleted}) {
+export default function TaskCard({ titulo, id , date, isCompleted }) {
   const { state, dispatch } = useContext(ContextStorage);
-  const { dispatch2 } = useContext(ContextActives)
+  const { dispatch2 } = useContext(ContextActives);
+
+  const viewTask = () => {
+    dispatch2({ type: "ACTIVE-VIEW" });
+    dispatch({ type: "VIEW-DATA", payload: id });
+  };
+
+  const completeTaskOnOff = () => {
+    dispatch({ type: "COMPLETED-TASK", payload: id });
+  };
+
+  const editTask = () => {
+    dispatch2({ type: "ACTIVE-ADD" });
+    dispatch({ type: "EDIT-DATA", payload: id });
+  };
+
+  const deleteTask = () => {
+    dispatch({ type: "DELETE-ELEMENT", payload: id });
+  };
 
   return (
     <>
-      <div className={`${styles.boxCard} ${isCompleted ? styles['incomplete']: ''}`}>
+      <div
+        className={`${styles.boxCard} ${
+          isCompleted ? styles["incomplete"] : ""
+        }`}
+      >
         <div className="cardContent">
-          <p><strong>Titulo:</strong> {titulo}</p>
-          <p><strong>Termino: </strong>{date}</p>
+          <p>
+            <strong>Titulo:</strong> {titulo.toLowerCase()}
+          </p>
+          <p>
+            <strong>Termino: </strong>{date}
+          </p>
         </div>
-        {/* Controles de funções dos icons */}
+
+        {/* Controles */}
         <div className={styles.boxControl}>
-          {/* visualizar */}
-          <button onClick={() => {
-            dispatch2({ type: "ACTIVE-VIEW" })
-            dispatch({type:'VIEW-DATA', payload:titulo})}}>
-            <FaEye/>
+          <button onClick={() => viewTask()}>
+            <FaEye />
           </button>
-          {/* completar ou Vice-Versa */}
           <button
-            onClick={() => dispatch({ type: 'COMPLETED-TASK', payload: titulo })}
-            className={`${isCompleted ? styles['incompleteIcon']: ''}`}>
+            className={`${isCompleted ? styles["incompleteIcon"] : ""}`}
+            onClick={() => completeTaskOnOff()}
+          >
             <MdOutlineTaskAlt />
           </button>
-          {/* Editar */}
-          <button
-            onClick={() => {
-              dispatch2({ type: 'ACTIVE-ADD' })
-              dispatch({ type: 'EDIT-DATA', payload: titulo })
-            }}
-          >
+          <button onClick={() => editTask()}>
             <FaEdit />
           </button>
-          {/* Excluir */}
-          <button
-            onClick={() => dispatch({ type: "DELETE-ELEMENT", payload: titulo })}>
+          <button onClick={() => deleteTask()}>
             <MdDelete />
           </button>
         </div>

@@ -5,8 +5,8 @@ let object = JSON.parse(localStorage.getItem("dataStorage")) || [];
 
 const initialState = {
   data: object,
-  dataView: [],
-  tempData: {}
+  dataView: null, //[]
+  tempData: null //{}
 };
 
 const Reduce = (state, action) => {
@@ -18,7 +18,7 @@ const Reduce = (state, action) => {
       };
     case "DELETE-ELEMENT":
       const deletion = state.data.filter(
-        (elm) => elm.titulo !== action.payload
+        (elm) => elm.id !== action.payload
       );
       return {
         ...state,
@@ -26,7 +26,7 @@ const Reduce = (state, action) => {
       };
     case "COMPLETED-TASK":
       const completing = state.data.map((elm) =>
-        elm.titulo === action.payload
+        elm.id === action.payload
           ? { ...elm, isCompleted: !elm.isCompleted }
           : elm
       );
@@ -36,7 +36,7 @@ const Reduce = (state, action) => {
       };
     case 'VIEW-DATA':
       const  viewing = state.data.filter((elm) =>
-        elm.titulo === action.payload 
+        elm.id === action.payload 
       )
       return {
         ...state,
@@ -44,7 +44,7 @@ const Reduce = (state, action) => {
       }
     case "EDIT-DATA": {
       const  editing = state.data.filter((elm) =>
-        elm.titulo === action.payload 
+        elm.id === action.payload 
       )
       return {
         ...state,
@@ -68,7 +68,7 @@ const Reduce = (state, action) => {
 
 export const ContextStorage = createContext();
 export function StorageProvider({ children }) {
-  const [state, dispatch] = useReducer(Reduce, { data: object });
+  const [state, dispatch] = useReducer(Reduce, initialState);
 
   useEffect(() => {
     localStorage.setItem("dataStorage", JSON.stringify(state.data));

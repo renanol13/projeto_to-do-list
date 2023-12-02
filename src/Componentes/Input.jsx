@@ -10,15 +10,17 @@ export default function Input({
 }) {
   return (
     <>
-    <input
-      type={type}
-      name={name}
-      value={value}
-      onChange={handleChange}
-      placeholder={placeholder}
-      className={styles[customStyles]}
-      required
-    />
+      <input
+        type={type}
+        name={name}
+        value={value}
+        onChange={handleChange}
+        placeholder={placeholder}
+        className={styles[customStyles]}
+        required
+        autoComplete="off"
+        maxLength='18'
+      />
     </>
   );
 }

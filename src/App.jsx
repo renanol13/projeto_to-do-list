@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import NavBar from "./Componentes/NavBar"
 import Conteiner from "./Componentes/Conteiner"
 import Tasks from "./Paginas/Tasks"
-import Graphic from "./project/Graphic"
+import Graphic from "./Paginas/Graphic"
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <NavBar/>
         <Conteiner>
           <Routes>
-            <Route path="/" element={<Tasks />} />
+            <Route exact path="/" element={<Tasks />} />
             <Route path="/graphic" element={<Graphic/>} />
           </Routes>
         </Conteiner>
